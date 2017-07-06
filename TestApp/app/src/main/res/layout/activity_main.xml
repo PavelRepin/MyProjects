@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp4740.testapp.activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/cityFromEditor"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:hint="from"
+            android:text="MOW"
+            android:onClick="onCityFromClick"/>
+
+        <EditText
+            android:id="@+id/cityToEditor"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:hint="to"
+            android:text="SIP"
+            android:onClick="onCityToClick"/>
+
+        <TextView
+            android:id="@+id/dateFromEditor"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:hint="date_from"
+            android:onClick="onDateFromClick" />
+
+        <TextView
+            android:id="@+id/dateToEditor"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:hint="date_to"
+            android:onClick="onDateToClick" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/inputLayout"
+        android:onClick="search"
+        android:text="Search" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchButton" />
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_orange_dark"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/flightCodeText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header" />
+
+    <TextView
+        android:id="@+id/flightDurationText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_toEndOf="@+id/flightCodeText"
+        android:layout_toRightOf="@+id/flightCodeText" />
+
+    <TextView
+        android:id="@+id/flightPriceText"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_toEndOf="@+id/flightDurationText"
+        android:layout_toRightOf="@+id/flightDurationText" />
+
+    <TextView
+        android:id="@+id/bestTicket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flightCodeText"
+        android:text="Best ticket!"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/fastest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flightPriceText"
+        android:layout_toEndOf="@+id/flightDurationText"
+        android:layout_toRightOf="@+id/flightDurationText"
+        android:text="The fastest!"
+        android:textColor="@android:color/holo_green_dark"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/cheapestWithStops"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flightDurationText"
+        android:layout_toEndOf="@+id/flightCodeText"
+        android:layout_toRightOf="@+id/flightCodeText"
+        android:text="The cheapest with stop!"
+        android:textColor="@android:color/holo_blue_bright"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/cheapestNonStop"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flightDurationText"
+        android:layout_toEndOf="@+id/flightCodeText"
+        android:layout_toRightOf="@+id/flightCodeText"
+        android:text="The cheapest without stop!"
+        android:textColor="@android:color/holo_blue_light"
+        android:visibility="gone" />
+
+</RelativeLayout>
