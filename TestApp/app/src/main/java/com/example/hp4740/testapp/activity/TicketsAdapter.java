@@ -7,21 +7,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.hp4740.testapp.api.Ticket;
 import com.example.hp4740.testapp.R;
+import com.example.hp4740.testapp.domain.Ticket;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 class TicketsAdapter extends BaseAdapter {
     private Context context;
     private List<Ticket> tickets;
+
+    private static final String DATE_PATTERN = "MMM d, ''yy";
+    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat(DATE_PATTERN,
+                                                                                    Locale.US);
 
     TicketsAdapter(Context context) {
         this.context = context;
     }
 
     public void setData(List<Ticket> tickets) {
-        this.tickets = tickets;
+        this.tickets = new ArrayList<>(tickets);
         notifyDataSetChanged();
     }
 
@@ -61,15 +68,18 @@ class TicketsAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        holder.flightCode.setText(tickets.get(position).getCode());
-        holder.flightDuration.setText(Long.toString(tickets.get(position).getDuration()));
-        holder.flightPrice.setText(Double.toString(tickets.get(position).getPrice()));
-        holder.bestTicket.setVisibility(tickets.get(position).isBest() ? View.VISIBLE : View.GONE);
-        holder.header.setVisibility(tickets.get(position).isBest() ? View.VISIBLE : View.GONE);
-        holder.header.setText(tickets.get(position).getDepDate());
-        holder.fastest.setVisibility(tickets.get(position).isFastest() ? View.VISIBLE : View.GONE);
-        holder.cheapestNonStop.setVisibility(tickets.get(position).isCheapestNonStop() ? View.VISIBLE : View.GONE);
-        holder.cheapestWithStops.setVisibility(tickets.get(position).isCheapestWithStops() ? View.VISIBLE : View.GONE);
+        Ticket ticket = tickets.get(position);
+        holder.flightCode.setText(ticket.getCode());
+        holder.flightDuration.setText(Long.toString(ticket.getDuration()));
+        holder.flightPrice.setText(Double.toString(ticket.getPrice()));
+        holder.bestTicket.setVisibility(ticket.isBest() ? View.VISIBLE : View.GONE);
+        holder.header.setVisibility(ticket.isBest() ? View.VISIBLE : View.GONE);
+        holder.header.setText(SIMPLE_DATE_FORMAT.format(ticket.getDepDate()));
+        holder.fastest.setVisibility(ticket.isFastest() ? View.VISIBLE : View.GONE);
+        holder.cheapestNonStop.setVisibility(ticket.isCheapestNonStop() ? View.VISIBLE
+                                                                        : View.GONE);
+        holder.cheapestWithStops.setVisibility(ticket.isCheapestWithStops() ? View.VISIBLE
+                                                                            : View.GONE);
         return convertView;
     }
 

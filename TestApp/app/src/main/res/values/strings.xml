@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TestApp</string>
+    <string name="msg_invalid_city_from">Enter the city you want to fly from!</string>
+    <string name="msg_invalid_city_to">Enter the city you want to fly to!</string>
+    <string name="msg_invalid_date_from">Enter first flight date!</string>
+    <string name="error_msg_invalid_dates">input dates are invalid</string>
 </resources>

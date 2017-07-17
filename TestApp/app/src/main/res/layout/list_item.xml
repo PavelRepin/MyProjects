@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="100dp">
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <TextView
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_orange_dark"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="HEADER"/>
+
 
     <TextView
         android:id="@+id/flightCodeText"
